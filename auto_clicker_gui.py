@@ -19,9 +19,9 @@ hold_pressed = False  # Untuk mode Hold Click
 min_delay = 0.1
 max_delay = 0.5
 click_button = Button.left
-start_stop_key = KeyCode(char='s')  # Default shortcut
+start_stop_key = KeyCode(char='s')  
 timer_seconds = 0
-start_time = 0  # Untuk mencatat waktu mulai timer
+start_time = 0  
 
 # Inisialisasi Tkinter
 root = tk.Tk()
@@ -30,7 +30,7 @@ root.geometry("500x450")
 root.resizable(False, False)
 
 # Variabel Mode dan Button Click
-mode = tk.StringVar(master=root, value="AutoClick")  # Default mode
+mode = tk.StringVar(master=root, value="AutoClick") 
 click_button_var = tk.StringVar(master=root, value="Left")  
 
 def clicker():
@@ -38,7 +38,7 @@ def clicker():
     global clicking, hold_pressed, timer_running, timer_seconds, start_time
     while program_running:
         if clicking and timer_running:
-            start_time = time.time()  # Catat waktu mulai
+            start_time = time.time() 
             while clicking and (timer_seconds == 0 or (time.time() - start_time < timer_seconds)):
                 if mode.get() == "AutoClick":
                     mouse.click(click_button)
